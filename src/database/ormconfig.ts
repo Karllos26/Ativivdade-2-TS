@@ -2,14 +2,14 @@ import{DataSource} from "typeorm"
 import dotenv from "dotenv"
 
 const dataBase = new DataSource({
-    type:'sqlite',
-    database: process.env.DATABASE || '/db.sqlite',
+    type: 'sqlite',
+    database: process.env.DATABASE || './src/database/database.sqlite',
     entities: [
-        '/scr/models/*.ts'
+      join(__dirname, '..', 'models/*.{ts,js}')
     ],
     logging: true,
     synchronize: true
-})
+  })
 
 dataBase.initialize()
 .then(() => {
