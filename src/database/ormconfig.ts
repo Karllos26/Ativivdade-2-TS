@@ -4,7 +4,7 @@ import { join } from "path"
 
 const dataBase = new DataSource({
     type:'sqlite',
-    database: process.env.DATABASE || '/db.sqlite',
+    database: process.env.DATABASE || './src/database/db.sqlite',
     entities: [
       join(__dirname, '..', 'models/*.{ts,js}')
     ],
