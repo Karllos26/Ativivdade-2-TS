@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 
 const dataBase = new DataSource({
     type: 'sqlite',
-    database: process.env.DATABASE || './src/database/database.sqlite',
+    database: process.env.DATABASE || './src/database/db.sqlite',
     entities: [
       join(__dirname, '..', 'models/*.{ts,js}')
     ],
